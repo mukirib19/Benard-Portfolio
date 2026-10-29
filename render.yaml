@@ -1,0 +1,16 @@
+services:
+  - type: web
+    runtime: static
+    name: benard-scott-portfolio
+    staticPublishPath: ./
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*.docx
+        name: Content-Disposition
+        value: attachment; filename="Benard_Scott_CV.docx"
+      - path: /*.pdf
+        name: Content-Disposition
+        value: attachment; filename="Benard_Scott_CV.pdf"
